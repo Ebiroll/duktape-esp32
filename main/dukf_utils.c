@@ -11,13 +11,17 @@
 #else // ESP_PLATFORM
 
 #include <sys/mman.h>
+#include <stdbool.h>
 
 #endif // ESP_PLATFORM
 
 #include <duktape.h>
 #include <errno.h>
 #include <fcntl.h>
+#if defined(ESP_PLATFORM)
 #include <nvs.h>
+#endif // ESP_PLATFORM
+
 #include <stdio.h>
 #include <string.h>
 #include <sys/stat.h>
@@ -25,7 +29,9 @@
 
 #include "dukf_utils.h"
 #include "duktape_utils.h"
+#if defined(ESP_PLATFORM)
 #include "esp32_specific.h"
+#endif // ESP_PLATFORM
 #include "logging.h"
 
 #define MAX_RUN_AT_START (5)

@@ -233,7 +233,9 @@ void duktape_task(void* ignore) {
 	LOGD(">> duktape_task");
 	dukf_log_heap("duktape_task");
 
+#if defined(ESP_PLATFORM)
 	dukf_init_nvs_values(); // Initialize any defaults for NVS data
+#endif
 
 	// Define the scripts which are to run at boot time
 	dukf_addRunAtStart("start.js");

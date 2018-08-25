@@ -1,0 +1,206 @@
+xtensa-softmmu/qemu-system-xtensa -d guest_errors,unimp  -cpu esp32 -M esp32 -m 4M  -S -s  > io.txt
+I (0) boot: ESP-IDF v3.1-beta1-41-gf198339e 2nd stage bootloader
+I (0) boot: compile time 07:42:39
+I (0) boot: Enabling RNG early entropy source...
+I (0) boot: SPI Speed      : 40MHz
+I (0) boot: SPI Mode       : DIO
+I (0) boot: SPI Flash Size : 4MB
+I (0) boot: Partition Table:
+I (0) boot: ## Label            Usage          Type ST Offset   Length
+I (0) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (0) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (0) boot:  2 factory          factory app      00 00 00010000 00170000
+I (0) boot:  3 spiffs           Unknown data     01 82 00180000 00080000
+I (0) boot: End of partition table
+I (0) esp_image: segment 0: paddr=0x00010020 vaddr=0x3f400020 size=0x2c060 (180320) map
+I (8) esp_image: segment 1: paddr=0x0003c088 vaddr=0x3ffb0000 size=0x02d80 ( 11648) load
+I (8) esp_image: segment 2: paddr=0x0003ee10 vaddr=0x3ffb2d80 size=0x00000 (     0) load
+I (8) esp_image: segment 3: paddr=0x0003ee18 vaddr=0x40080000 size=0x00400 (  1024) load
+I (9) esp_image: segment 4: paddr=0x0003f220 vaddr=0x40080400 size=0x00df0 (  3568) load
+I (9) esp_image: segment 5: paddr=0x00040018 vaddr=0x400d0018 size=0xca23c (827964) map
+I (43) esp_image: segment 6: paddr=0x0010a25c vaddr=0x400811f0 size=0x10ebc ( 69308) load
+I (47) esp_image: segment 7: paddr=0x0011b120 vaddr=0x400c0000 size=0x00000 (     0) load
+I (47) esp_image: segment 8: paddr=0x0011b128 vaddr=0x50000000 size=0x00000 (     0) load
+HOST RER TBD
+I (48) boot: Loaded app from partition at offset 0x10000
+I (48) boot: Disabling RNG early entropy source...
+I (48) cpu_start: Pro cpu up.
+I (48) cpu_start: Single core mode
+I (48) heap_init: Initializing. RAM available for dynamic allocation:
+D (48) heap_init: New heap initialised at 0x3ffae6e0
+I (48) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+D (48) heap_init: New heap initialised at 0x3ffb9628
+I (48) heap_init: At 3FFB9628 len 000269D8 (154 KiB): DRAM
+I (48) heap_init: At 3FFE0440 len 00003BC0 (14 KiB): D/IRAM
+I (48) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+D (48) heap_init: New heap initialised at 0x400920ac
+I (48) heap_init: At 400920AC len 0000DF54 (55 KiB): IRAM
+I (48) cpu_start: Pro cpu start user code
+D (1468) clk: RTC_SLOW_CLK calibration value: 100
+esp32_i2c_interruptSet: new IRQ val 0x290b5a60
+V (9) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (9) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xE
+D (9) intr_alloc: Connected src 46 to int 2 (cpu 0)
+V (9) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (10) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xC0E
+D (10) intr_alloc: Connected src 57 to int 3 (cpu 0)
+TBD(pc = 4009057f): /home/olof/qemu-xtensa-esp32/target-xtensa/translate.c:1409
+HOST RER TBD
+V (10) esp_dbg_stubs: esp_dbg_stubs_init stubs 100014
+V (10) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (10) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0x40E
+D (10) intr_alloc: Connected src 24 to int 9 (cpu 0)
+I (10) cpu_start: Starting scheduler on PRO CPU.
+D (10) heap_init: New heap initialised at 0x3ffe0440
+D (10) heap_init: New heap initialised at 0x3ffe4350
+V (10) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (10) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xE
+D (10) intr_alloc: Connected src 16 to int 12 (cpu 0)
+D (10) duktape_main: Free heap at start: 277120
+NV_INIT_CALLED
+
+D (10) nvs: nvs_flash_init_custom partition=nvs start=9 count=6
+D (10) nvs: nvs_open_from_partition misc 1
+D (10) nvs: nvs_get_str_or_blob log
+D (10) nvs: nvs_set_blob log 24
+I (10) wifi: wifi driver task: 3ffc0328, prio:23, stack:3584, core=0
+I (10) wifi: wifi firmware version: b987c01
+I (10) wifi: config NVS flash: enabled
+I (10) wifi: config nano formating: disabled
+I (10) system_api: Base MAC address is not set, read default base MAC address from BLK0 of EFUSE
+I (10) system_api: Base MAC address is not set, read default base MAC address from BLK0 of EFUSE
+D (10) nvs: nvs_open_from_partition nvs.net80211 1
+D (10) nvs: nvs_get opmode 1
+D (10) nvs: nvs_set opmode 1 2
+D (10) nvs: nvs_get_str_or_blob sta.ssid
+D (10) nvs: nvs_set_blob sta.ssid 36
+D (10) nvs: nvs_get_str_or_blob sta.mac
+D (10) nvs: nvs_set_blob sta.mac 6
+D (10) nvs: nvs_get sta.authmode 1
+D (10) nvs: nvs_set sta.authmode 1 1
+D (10) nvs: nvs_get_str_or_blob sta.pswd
+D (10) nvs: nvs_set_blob sta.pswd 65
+D (10) nvs: nvs_get_str_or_blob sta.pmk
+D (10) nvs: nvs_set_blob sta.pmk 32
+D (10) nvs: nvs_get sta.chan 1
+D (10) nvs: nvs_set sta.chan 1 0
+D (10) nvs: nvs_get auto.conn 1
+D (10) nvs: nvs_set auto.conn 1 1
+D (10) nvs: nvs_get bssid.set 1
+D (10) nvs: nvs_set bssid.set 1 0
+D (10) nvs: nvs_get_str_or_blob sta.bssid
+D (10) nvs: nvs_set_blob sta.bssid 6
+D (10) nvs: nvs_get sta.lis_intval 2
+D (10) nvs: nvs_set sta.lis_intval 2 3
+D (10) nvs: nvs_get sta.phym 1
+D (10) nvs: nvs_set sta.phym 1 3
+D (10) nvs: nvs_get sta.phybw 1
+D (10) nvs: nvs_set sta.phybw 1 2
+D (10) nvs: nvs_get_str_or_blob sta.apsw
+D (10) nvs: nvs_set_blob sta.apsw 2
+D (10) nvs: nvs_get_str_or_blob sta.apinfo
+D (10) nvs: nvs_set_blob sta.apinfo 700
+D (10) nvs: nvs_get sta.scan_method 1
+D (10) nvs: nvs_set sta.scan_method 1 0
+D (10) nvs: nvs_get sta.sort_method 1
+D (10) nvs: nvs_set sta.sort_method 1 0
+D (10) nvs: nvs_get sta.minrssi 1
+D (10) nvs: nvs_set sta.minrssi 1 -127
+D (10) nvs: nvs_get sta.minauth 1
+D (10) nvs: nvs_set sta.minauth 1 0
+D (10) nvs: nvs_get_str_or_blob ap.ssid
+D (10) nvs: nvs_set_blob ap.ssid 36
+D (10) nvs: nvs_get_str_or_blob ap.mac
+D (10) nvs: nvs_set_blob ap.mac 6
+D (10) nvs: nvs_get_str_or_blob ap.passwd
+D (10) nvs: nvs_set_blob ap.passwd 65
+D (10) nvs: nvs_get_str_or_blob ap.pmk
+D (10) nvs: nvs_set_blob ap.pmk 32
+D (10) nvs: nvs_get ap.chan 1
+D (10) nvs: nvs_set ap.chan 1 1
+D (10) nvs: nvs_get ap.authmode 1
+D (10) nvs: nvs_set ap.authmode 1 0
+D (10) nvs: nvs_get ap.hidden 1
+D (10) nvs: nvs_set ap.hidden 1 0
+D (10) nvs: nvs_get ap.max.conn 1
+D (10) nvs: nvs_set ap.max.conn 1 4
+D (10) nvs: nvs_get bcn.interval 2
+D (10) nvs: nvs_set bcn.interval 2 100
+D (10) nvs: nvs_get ap.phym 1
+D (10) nvs: nvs_set ap.phym 1 3
+D (10) nvs: nvs_get ap.phybw 1
+D (10) nvs: nvs_set ap.phybw 1 2
+D (10) nvs: nvs_get ap.sndchan 1
+D (10) nvs: nvs_set ap.sndchan 1 1
+D (10) nvs: nvs_get lorate 1
+D (10) nvs: nvs_set lorate 1 0
+D (10) nvs: nvs_set_blob sta.mac 6
+D (10) nvs: nvs_set_blob ap.mac 6
+I (10) wifi: Init dynamic tx buffer num: 32
+I (10) wifi: Init data frame dynamic rx buffer num: 32
+I (10) wifi: Init management frame dynamic rx buffer num: 32
+I (10) wifi: Init static rx buffer size: 1600
+I (10) wifi: Init static rx buffer num: 10
+I (10) wifi: Init dynamic rx buffer num: 32
+D (10) duktape_task: >> duktape_task
+D (10) dukf_utils: duktape_task: heapSize=223280
+D (10) nvs: nvs_open_from_partition esp32duktape 1
+D (10) nvs: nvs_get useSerial 4
+D (10) nvs: nvs_set useSerial 4 0
+D (10) nvs: nvs_close 3
+E (10) SPIFFS: mount failed, -10025
+E (10) duktape_spiffs: Failed to mount or format filesystem
+D (10) duktape_task: About to create heap
+D (20) dukf_utils: Heap after duk create heap: heapSize=154232
+D (30) dukf_utils: Heap after duk_module_duktape_init: heapSize=152620
+D (30) modules: >> registerModules
+E (30) espfs: No valid header at flash address.  Expected to find 73665345 and found ffffffff
+D (30) module_os: Registering moduleOS
+D (30) modules: << registerModules
+D (30) dukf_utils: Heap after duk register modules: heapSize=146608
+D (30) dukf_utils: >> dukf_runFile: /init.js
+D (30) dukf_utils: >> dukf_loadFile: (ESPFS) /init.js, heapSize=146608
+D (30) espfs: >> espFsOpen: /init.js
+D (30) espfs: Magic mismatch. EspFS image broken.
+D (30) dukf_utils:  Failed to open file /init.js
+E (30) dukf_utils: Failed to open file /init.js - No such file or directory
+E (30) dukf_utils: << dukf_runFile: Failed to load file
+D (30) dukf_utils: Heap after init.js: heapSize=146608
+D (30) log: Console: esp32_duktape> 
+D (30) dukf_utils: Running scripts registered to auto start:
+D (30) dukf_utils:  autostart: start.js
+D (30) dukf_utils: >> dukf_runFile: start.js
+D (30) dukf_utils: >> dukf_loadFile: (ESPFS) start.js, heapSize=146608
+D (30) espfs: >> espFsOpen: start.js
+D (30) espfs: Magic mismatch. EspFS image broken.
+D (30) dukf_utils:  Failed to open file start.js
+E (30) dukf_utils: Failed to open file start.js - No such file or directory
+E (30) dukf_utils: << dukf_runFile: Failed to load file
+D (30) duktape_task: Free heap at start of JavaScript main loop: 146608
+D (30) log: Console: 
+ ______  _____ _____ ____ ___
+|  ____|/ ____|  __ \___ \__ \
+| |__  | (___ | |__) |__) | ) |
+|  __|  \___ \|  ___/|__ < / /
+| |____ ____) | |    ___) / /_
+|______|_____/|_|  _|____/____|
+|  __ \      | |  | |
+| |  | |_   _| | _| |_ __ _ _ __   ___ 
+| |  | | | | | |/ / __/ _` | '_ \ / _ \
+| |__| | |_| |   <| || (_| | |_) |  __/
+|_____/ \__,_|_|\_\\__\__,_| .__/ \___|
+                           | |
+                           |_|
+ http://duktape.org
+ ESP32 port/framework: Neil Kolban
+ Build: Aug 25 2018 07:44:05
+
+
+D (30) duktape_task: Starting main loop!
+assertion "duk_is_function(esp32_duk_context, -1)" failed: file "/home/olof/esp/duktape-esp32/main/duktape_task.c", line 272, function: duktape_task
+abort() was called at PC 0x400f9b8b on core 0
+HOST RER TBD
+
+Backtrace: 0x400900f4:0x3ffc8df0 0x4009028f:0x3ffc8e10 0x400f9b8b:0x3ffc8e30 0x400d5d25:0x3ffc8e60
+
+Entering gdb stub now.

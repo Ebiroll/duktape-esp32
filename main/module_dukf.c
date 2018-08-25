@@ -101,11 +101,13 @@ static duk_ret_t js_dukf_runFile(duk_context *ctx) {
  */
 static duk_ret_t js_dukf_setStartFile(duk_context *ctx) {
 	const char *fileName = duk_get_string(ctx, -1);
+#if defined(ESP_PLATFORM)
 	nvs_handle handle;
 	nvs_open("esp32duktape", NVS_READWRITE, &handle);
 	nvs_set_str(handle, "start", fileName);
 	nvs_commit(handle);
 	nvs_close(handle);
+#endif
 	return 0;
 } // js_dukf_setStartFile
 
@@ -116,7 +118,9 @@ static duk_ret_t js_dukf_setStartFile(duk_context *ctx) {
  */
 static duk_ret_t js_dukf_sleep(duk_context *ctx) {
 	uint32_t delay = duk_get_int(ctx, -1);
+#if defined(ESP_PLATFORM)
 	vTaskDelay(delay/portTICK_PERIOD_MS);
+#endif
 	return 0;
 } // js_dukf_sleep
 
