@@ -1,14 +1,24 @@
 # ESP32-Duktape
 
-The boal of this was to make duktape run on a TTGO T-audio device.
+The goal of this project was to make duktape run on a TTGO T-audio device.
+However there was problems getting it to boot mode.
 
 make
 
 Then clone the mkspiff tool
 
-tmp/mkspiffs/mkspiffs -c filesystem/ -b 4096 -p 256 -s 0x100000 spiffs.bin
+Copy the files init.js  start.js
+    mkdir fs
 
-~/esp/esp-idf/components/esptool_py/esptool/esptool.py  --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x180000 spiffs.bin
+
+    tmp/mkspiffs/mkspiffs -c fs -b 4096 -p 256 -s 0x80000 spiffs.bin
+                                                       0x80000
+
+
+    ~/esp/esp-idf/components/esptool_py/esptool/esptool.py  --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x180000 spiffs.bin
+
+
+python /home/olof/esp/esp-idf/components/esptool_py/esptool/esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200 --before default_reset --after no_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x180000 spiffs.bin
        
 However on this hardware I never was able to upload any spiff, :-P
 Probably because I was not able to put it to boot mode.
