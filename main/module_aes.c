@@ -1,5 +1,6 @@
 #include "sdkconfig.h"
 //#if defined(CONFIG_AES_ENABLED)
+#if 0
 
 #include <freertos/FreeRTOSConfig.h>
 #include <duktape.h>
@@ -274,3 +275,4 @@ duk_ret_t ModuleAES(duk_context *ctx) {
 } // ModuleAES
 //#endif
 
+#endif
