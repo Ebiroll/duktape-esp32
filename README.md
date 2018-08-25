@@ -1,4 +1,30 @@
 # ESP32-Duktape
+
+The boal of this was to make duktape run on a TTGO T-audio device.
+
+make
+
+Then clone the mkspiff tool
+
+tmp/mkspiffs/mkspiffs -c filesystem/ -b 4096 -p 256 -s 0x100000 spiffs.bin
+
+~/esp/esp-idf/components/esptool_py/esptool/esptool.py  --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x180000 spiffs.bin
+       
+However on this hardware I never was able to upload any spiff, :-P
+Probably because I was not able to put it to boot mode.
+
+https://esp32.com/viewtopic.php?t=1914
+
+https://www.esp32.com/viewtopic.php?t=2272
+
+
+https://esp-idf.readthedocs.io/en/latest/api-reference/storage/spiffs.html
+
+
+python /home/olof/esp/esp-idf/components/esptool_py/esptool/esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 115200 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect  0x180000 spiffs.bin
+
+
+
 The ESP32 is a WiFi and Bluetooth enabled MCU from Espressif.  It is a dual core
 processor with 512K of RAM and commonly 4M of flash.  Each processor runs at
 240MHz.  It has built in WiFi and Bluetooth as well as a rich assortment of
